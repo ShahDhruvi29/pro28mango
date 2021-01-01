@@ -45,7 +45,7 @@ function setup() {
 
 	ground1 = Bodies.rectangle(width/2, 600, width, 20 , {isStatic: true});
   World.add(world, ground1)
-	launcherObj= new Launcher(stone.body,{x:390,y:355})
+	launcherObj= new launcher(stone.body,{x:390,y:355})
 }
 function draw() {
   background(bgImg);
@@ -68,11 +68,11 @@ function draw() {
  mango11.display()
  mango12.display()
  stone.display()
- launcherObj.display()
+ 
  rectMode(CENTER);
- fill(128,128,128);
- rect(ground1.position.x, ground1.position.y, width, 20);
-
+ fill(0,255,0);
+ rect(ground1.position.x, ground1.position.y, width, 40);
+ launcherObj.display()
  detectCollision(stone, mango1);
  detectCollision(stone, mango2);
  detectCollision(stone, mango3);
@@ -100,7 +100,7 @@ function keyPressed() {
   if (keyCode === 32) 
   {
     Matter.Body.setPosition(stone.body, {x:390, y:355});
-	  launcherObject.attach(stone.body);
+	  launcherObj.attach(stone.body);
 	}
 }
 
